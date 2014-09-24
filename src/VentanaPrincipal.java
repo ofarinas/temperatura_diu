@@ -16,6 +16,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
 
     /**
@@ -28,10 +29,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldTemperatura = new javax.swing.JTextField();
         convertir = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTextField2Fahrenheit = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -39,9 +40,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel1.setText("Temperatura celsius");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldTemperatura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jTextFieldTemperaturaActionPerformed(evt);
             }
         });
 
@@ -54,9 +55,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel2.setText("Resultado de temperatura Fahrenheit");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        jTextField2Fahrenheit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                jTextField2FahrenheitActionPerformed(evt);
             }
         });
 
@@ -77,7 +78,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                 .addComponent(jLabel1)
                                 .addGap(145, 145, 145))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                                .addComponent(jTextFieldTemperatura, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
                                 .addGap(27, 27, 27)
                                 .addComponent(convertir, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
                                 .addGap(24, 24, 24)))
@@ -85,7 +86,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                                .addComponent(jTextField2Fahrenheit, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
                                 .addGap(31, 31, 31)))))
                 .addContainerGap())
         );
@@ -98,9 +99,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(convertir)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField2Fahrenheit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(33, 33, 33))
@@ -109,22 +110,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void jTextField2FahrenheitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2FahrenheitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_jTextField2FahrenheitActionPerformed
 
     private void convertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_convertirActionPerformed
-        String temperatura = jTextField1.getText();
+        String temperatura = jTextFieldTemperatura.getText();
         if (!esNumero(temperatura)) {
-            jTextField1.setText("");
+            jTextFieldTemperatura.setText("");
         }
-        jTextField2.setText("");
-        jTextField2.setText(String.valueOf(Double.valueOf(temperatura) * 1.8 + 32));
+        jTextField2Fahrenheit.setText("");
+        jTextField2Fahrenheit.setText(String.valueOf(Double.valueOf(temperatura) * 1.8 + 32));
     }//GEN-LAST:event_convertirActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jTextFieldTemperaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTemperaturaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jTextFieldTemperaturaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,7 +157,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                
                 new VentanaPrincipal().setVisible(true);
+                
             }
         });
     }
@@ -165,8 +168,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField2Fahrenheit;
+    private javax.swing.JTextField jTextFieldTemperatura;
     // End of variables declaration//GEN-END:variables
 
     private boolean esNumero(String temperatura) {
